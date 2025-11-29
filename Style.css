@@ -1,0 +1,461 @@
+body {
+  margin: 0; /* Elimina el margen exterior del navegador */
+  padding: 0.5rem; /* Espaciado interno general */
+  box-sizing: border-box; /* Incluye padding y border en los tamaños */
+  font-family: "WDXL Lubrifont JP N", sans-serif; /* Fuente base legible y moderna */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+/* CABECERA Y MENÚ SUPERIOR */
+.top-header {
+  position: fixed; /* Mantiene el menú fijo en la parte superior */
+  background-color: #fff8f0; /* Fondo  para visibilidad */
+  width: 100%; /* Ocupa todo el ancho de la pantalla */
+  z-index: 100; /* Se asegura de estar por encima de otros elementos */
+  height: 5rem; /* Altura fija del menú (80px aprox.) */
+  display: flex; /* Activa Flexbox para alinear los elementos internos */
+  align-items: center; /* Centrado vertical */
+  justify-content: space-between; /* Separación entre logo y menú */
+  padding: 0 1.5rem; /* Espacio horizontal interno del menú */
+}
+
+/* LOGO */
+.logo img {
+  height: 5rem; /* Altura del logo */
+  width: auto; /* Mantiene proporción automática */
+}
+
+/* MENÚ PRINCIPAL HORIZONTAL */
+.menu-horizontal {
+  list-style: none; /* Quita los bullets */
+  display: flex; /* Muestra en fila horizontal */
+  justify-content: space-around; /* Espaciado uniforme entre elementos */
+  /*justify-content: flex-start;*/
+  margin: 0;
+  padding: 0;
+  margin-left: auto;
+  margin-right: 2rem;
+  gap: 20px;
+}
+
+/* BOTÓN HAMBURGUESA (ESCONDE EN DESKTOP) */
+.menu-toggle {
+  display: none; /* Oculto por defecto */
+  font-size: 2rem; /* Tamaño del ícono hamburguesa */
+  background: none; /* Sin fondo */
+  border: none; /* Sin bordes */
+  cursor: pointer; /* Manito al pasar el mouse */
+  margin-right: 17rem; /* Espacio entre el borde derecho */
+  margin-left: auto;
+}
+
+/* RESPONSIVE: MÓVILES */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block; /* Mostrar botón hamburguesa en móviles */
+    color: black;
+  }
+
+  .menu-horizontal {
+    display: none; /* Ocultar menú horizontal por defecto */
+    flex-direction: column; /* Mostrarlo en vertical al activarse */
+    width: 100%;
+    background-color: white;
+    position: absolute;
+    top: 5rem; /* Debajo del menú fijo */
+    left: 0;
+    padding: 20px;
+  }
+
+  .menu-horizontal.active {
+    display: flex; /* Mostrar menú al activar la clase */
+  }
+
+  .menu-horizontal li {
+    border-bottom: 1px solid #ccc; /* Líneas separadoras */
+  }
+}
+
+/* ENLACES DEL MENÚ */
+.menu-horizontal li a {
+  display: block; /* Permite aplicar padding y área clickeable completa */
+  padding: 1rem 1.25rem; /* Espaciado vertical y horizontal */
+  color: blue; /* Color del texto */
+  text-decoration: none; /* Sin subrayado */
+  list-style: none;
+}
+
+.menu-horizontal li a:hover {
+  color: #d23636; /* Cambio de color al pasar el mouse */
+}
+
+/* SUBMENÚ VERTICAL OCULTO POR DEFECTO */
+.menu-vertical {
+  display: none; /* Oculto por defecto */
+  position: absolute; /* Posición relativa al padre */
+  background-color: #ffe6dd; /* Fondo visible */
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 12rem; /* Ancho del submenú */
+}
+
+.menu-horizontal li:hover .menu-vertical {
+  display: block; /* Se muestra al pasar el mouse */
+}
+
+.menu-vertical li a {
+  display: block;
+  color: black;
+  padding: 1rem;
+  text-decoration: none;
+}
+
+.menu-vertical li a:hover {
+  background-color: #ffeceb; /* Resalta al pasar el mouse */
+}
+/*-------------------------------------------*/
+
+/* Sección con imagen de fondo */
+.fondo {
+  background-image: url("Imagenes/fondo.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 90vh; /* O 100vh si quieres que cubra toda la pantalla */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+/* Texto encima del fondo */
+.fondo-contenido {
+  position: relative;
+  z-index: 1;
+  padding: 2rem;
+}
+
+.fondo-contenido h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.fondo-contenido p {
+  font-size: 1.5rem;
+}
+
+/*--------------*/
+/* SECCIÓN HISTORIA */
+.historia {
+  padding-top: 6rem; /* Espacio superior para evitar que el menú tape el contenido */
+  padding-bottom: 3rem; /* Espaciado inferior */
+  padding-left: 2rem; /* Espaciado lateral izquierdo */
+  padding-right: 2rem; /* Espaciado lateral derecho */
+  background-color: #fcf5ec; /* Fondo suave */
+  color: #333; /* Texto gris oscuro legible */
+}
+
+.historia h2 {
+  font-size: 3rem; /* Tamaño de título */
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #a7373f;
+}
+
+/* CONTENEDOR DE IMAGEN Y TEXTO */
+.historia-contenido {
+  display: flex; /* Flexbox para organizar en fila */
+  flex-direction: row; /* Elementos uno al lado del otro */
+  gap: 2rem; /* Espacio entre imagen y texto */
+  align-items: flex; /* Alineación vertical centrada */
+  width: 100%;
+}
+
+/* IMAGEN */
+.historia-imagen {
+  flex: 1.2; /* Más espacio para la imagen*/
+  display: flex;
+  padding-left: 2rem; /*empuja la imagen a la derecha*/
+}
+
+.historia-imagen img {
+  width: 100%; /* Ocupa el ancho completo del contenedor */
+  height: auto; /* Mantiene la proporción */
+  border-radius: 0.5rem; /* Bordes redondeados */
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  float: right;
+  max-width: 550px;
+}
+
+/* TEXTO DE LA HISTORIA */
+.historia-texto {
+  flex: 1.5; /* Mas espacio para el texto */
+  font-size: 2rem; /* Tamaño base de texto */
+  line-height: 1.8; /* Altura de línea para mejor lectura */
+  color: #222;
+}
+
+.historia-texto p + p {
+  margin-top: 1.2rem; /* Espacio entre párrafos */
+}
+
+/* SECCION LOCALES */
+.locales {
+  padding-top: 6rem;
+  padding-bottom: 3rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  background-color: #ffffff;
+  color: #333;
+}
+.locales h2 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #a7373f;
+}
+.locales-contenido {
+  display: flex; /* Usa Flexbox para alinear en fila */
+  flex-direction: row; /* Texto a la izquierda, imagen a la derecha */
+  gap: 2rem; /* Espacio entre el texto y la imagen */
+  align-items: flex-start; /* Alineación superior vertical */
+  width: 100%; /* Ocupa todo el ancho disponible */
+}
+
+.locales-imagen {
+  flex: 0.5; /* Toma la mitad del espacio */
+  display: flex;
+}
+
+.locales-imagen img {
+  width: 90%; /* Ocupa el ancho completo del contenedor */
+  height: auto; /* Mantiene la proporción */
+  border-radius: 0.5rem; /* Bordes redondeados */
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+  max-width: 400px; /* Mantiene la proporción natural de la imagen */
+}
+
+/* TEXTO DEL locales */
+.locales-texto {
+  flex: 1;
+  font-size: 2rem; /* el tamaño del texto del párrafo */
+  line-height: 1.6;
+}
+
+/*SECCION QUIENES SOMOS*/
+
+.quienes-somos {
+  padding-top: 6rem;
+  padding-bottom: 3rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  background-color: #ffe5d4;
+  color: #333;
+  border-radius: 15px;
+  max-width: 1200px;
+  margin: 40px auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.quienes-somos h2 {
+  font-size: 3rem; /* Tamaño de título */
+  margin-bottom: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+  color: #a7373f;
+}
+
+.contenido-quienes {
+  display: flex;
+  align-items: flex-start;
+  padding: 0;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.texto-quienes {
+  flex: 1;
+  min-width: 300px;
+}
+
+.texto-quienes h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.texto-quienes p {
+  font-size: 2rem; /* el tamaño del texto del párrafo */
+  line-height: 1.6;
+  color: #333;
+}
+
+.video-quienes {
+  flex: 1;
+  min-width: 300px;
+  padding-left: 30px;
+}
+
+.video-quienes video {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 10px;
+}
+
+/* VIDEO EMBED */
+
+.proposito-video {
+  flex: 1;
+}
+.proposito-video iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: none;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+}
+
+/* SECCIÓN FORMULARIO / CONTACTANOS */
+
+.seccion-formulario {
+  background-color: #ffe5d4;
+  padding: 40px;
+  border: 3px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.div-cont-formulario {
+  background-color: whitesmoke;
+  padding: 30px;
+  border: 2px solid rgb(2, 2, 2);
+  border-radius: 10px;
+  width: 100%;
+  max-width: 500px;
+}
+
+.campo {
+  background-color: rgb(255, 196, 0);
+  border: 1px;
+  padding: 15px;
+  margin-bottom: 15px;
+  margin-bottom: 15px;
+  border-radius: 0.5rem;
+}
+
+.campo input,
+campo textarea {
+  width: 100%;
+  padding: 12px;
+  box-sizing: border-box;
+  border-radius: 1, 5rem;
+  border: 1px solid;
+}
+
+.formulario labeL {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: navy;
+}
+
+/*<!-- INPUT/LABEL -->*/
+
+.formulario input[type="text"],
+.formulario select {
+  width: 100%;
+  padding: 7px;
+  border: 1px solid black;
+  box-sizing: border-box;
+  border-radius: 1, 3rem;
+}
+
+.lista-checkbox,
+.lista-radio {
+  list-style: none;
+  padding: 10px;
+  margin: 0;
+  border: 1px;
+  background-color: orchid;
+  border-radius: 5px;
+}
+
+.formulario button {
+  background-color: green;
+  color: white;
+  border: 1.5px solid black;
+  padding: 2, 5rem;
+  cursor: pointer;
+  justify-content: center;
+  margin-top: 1, 8rem;
+  width: 100%;
+  font-size: 1rem;
+  border-radius: 5px;
+}
+
+/* Footer */
+
+* Footer general */ .footer {
+  background-color: #222; /* Fondo oscuro para contraste */
+  color: white;
+  padding: 2rem 1rem;
+  font-family: "Roboto", sans-serif;
+}
+
+/* Contenedor flexible para 3 columnas */
+.footer-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: auto;
+  gap: 2rem;
+}
+/* Marca o logotipo */
+.footer-brand {
+  flex: 1;
+  min-width: 200px;
+}
+.footer-logo {
+  width: 80px;
+  height: auto;
+  margin-bottom: 1rem;
+}
+/* Enlaces legales */
+.footer-links {
+  flex: 1;
+  min-width: 200px;
+}
+.footer-links a {
+  display: block;
+  color: #ccc;
+  text-decoration: none;
+  margin: 0.3rem 0;
+}
+.footer-links a:hover {
+  color: #fff;
+}
+/* Redes sociales con íconos */
+.footer-social {
+  flex: 1;
+  min-width: 200px;
+  display: flex;
+  justify-content: center; /*centre horizontal*/
+  align-items: center;
+  gap: 1rem; /*Espacio entre íconos */
+  flex-wrap: wrap;
+}
+.social-icon {
+  width: 32px;
+  height: 32px;
+  margin-right: 0.5rem;
+  transition: transform 0.2s ease-in-out;
+}
+.social-icon:hover {
+  transform: scale(1.2);
+}

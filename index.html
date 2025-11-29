@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Landing Page - Curso IHC</title>
+    <link rel="stylesheet" href="Style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=WDXL+Lubrifont+JP+N&display=swap"
+    />
+  </head>
+  <body>
+    <!-- MENÚ SUPERIOR -->
+    <nav class="top-header">
+      <a href="#" class="logo">
+        <img src="Imagenes/logo.png" alt="Logo" />
+      </a>
+
+      <!-- BOTÓN HAMBURGUESA -->
+      <button class="menu-toggle" aria-label="Abrir menú">
+        &#9776;
+        <!-- Ícono de hamburguesa -->
+      </button>
+
+      <!-- MENÚ DE NAVEGACIÓN -->
+      <ul class="menu-horizontal">
+        <li>
+          <a href="#historia">Historia</a>
+          <ul class="menu-vertical">
+            <li><a href="#locales">Sedes</a></li>
+            <li><a href="#quienes-somos">Quienes Somos</a></li>
+          </ul>
+        </li>
+        <!--<li><a href="#Opiniones">Opiniones</a></li>-->
+        <li><a href="#Contactanos">Contactanos</a></li>
+        <li><a href="login.html">Iniciar Sesion</a></li>
+      </ul>
+    </nav>
+
+    <!-- SECCIÓN  PORTADA -->
+    <section class="fondo">
+      <div class="fondo-contenido">
+        <h1>Bienvenidos a Maido</h1>
+        <p>Una fusión entre Japón y Perú en cada plato</p>
+        <!--  <a href="#reservas" class="btn-reservar">Reservar ahora</a>-->
+      </div>
+    </section>
+
+    <!-- SECCIÓN HISTORIA -->
+    <section class="historia" id="historia">
+      <h2>Historia</h2>
+      <div class="historia-contenido">
+        <div class="historia-imagen">
+          <img
+            src="Imagenes/historia1.jpg"
+            alt="Libro abierto representando aprendizaje e historia"
+          />
+        </div>
+        <div class="historia-texto">
+          <p>
+            El restaurante Maido fue inaugurado en 2009 en Lima, en el distrito
+            de Miraflores. Desde el inicio, su propuesta fue clara: ofrecer
+            cocina nikkei, es decir, una fusión entre técnicas japonesas y
+            sabores peruanos. Maido significa "bienvenido" o "gracias por venir"
+            en japonés, lo cual refleja su filosofía de hospitalidad.
+          </p>
+          <p></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN Locales -->
+    <section class="locales" id="locales">
+      <h2>Sedes</h2>
+      <div class="locales-contenido">
+        <div class="locales-texto">
+          <p>
+            Dirección oficial: Calle San Martín 399, Miraflores 15074, Lima,
+            Perú
+          </p>
+
+          <p>
+            Descripción de la ubicación Maido se encuentra en el corazón del
+            distrito de Miraflores, uno de los barrios más turísticos, modernos
+            y seguros de Lima. Está ubicado a pocas cuadras del Malecón de
+            Miraflores y cerca de hoteles de lujo, centros comerciales como
+            Larcomar, y zonas culturales y gastronómicas de renombre.
+          </p>
+
+          <p></p>
+          <p></p>
+        </div>
+
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3900.8060318059215!2d-77.03314932517351!3d-12.125420188117523!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c81f27e4bc39%3A0xb4f22dc28850601!2sMaido!5e0!3m2!1ses-419!2spe!4v1751516580392!5m2!1ses-419!2spe"
+          width="600"
+          height="450"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        >
+        </iframe>
+      </div>
+    </section>
+
+    <!-- SECCIÓN Quienes Somos -->
+
+    <section class="quienes-somos" id="quienes-somos">
+      <h2>¿Quiénes Somos?</h2>
+      <div class="contenido-quienes">
+        <div class="texto-quienes">
+          <p>
+            Somos Maido, un restaurante que fusiona lo mejor de la cocina
+            japonesa con el alma peruana. Nuestra misión es ofrecer experiencias
+            únicas a través de sabores innovadores y técnicas ancestrales.
+          </p>
+        </div>
+        <div class="video-quienes">
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/QOCsW_dfzXA?si=R1evSTGGXo0TRtOk"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          >
+          </iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN FORMULARIO / CONTACTANOS -->
+    <section class="seccion-formulario">
+      <div class="div-cont-formulario">
+        <h2>Contáctanos</h2>
+
+        <form class="formulario">
+          <div class="campo">
+            <label for="nombre">Nombre completo:</label>
+            <input
+              type="text"
+              id="nombre"
+              name="nombre"
+              placeholder="Ingresa tu nombre"
+              required
+            />
+          </div>
+
+          <div class="campo">
+            <label for="email">Correo electrónico:</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Ingresa tu correo"
+              required
+            />
+          </div>
+
+          <div class="campo">
+            <label for="mensaje">Mensaje:</label>
+            <textarea
+              id="mensaje"
+              name="mensaje"
+              rows="4"
+              placeholder="Escribe tu mensaje"
+            ></textarea>
+          </div>
+
+          <button type="submit">Enviar</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- PIE DE PAGINA -->
+
+    <section id="footer">
+      <footer class="footer">
+        <div class="footer-container">
+          <!-- Logo y nombre de sitio -->
+          <div class="footer-brand">
+            <img src="Imagenes/logo.png" alt="Logo" class="footer-logo" />
+            <p>Maido</p>
+            <small>© 2025 Todos los derechos reservados</small>
+          </div>
+
+          <!-- Enlaces legales -->
+          <div class="footer-links">
+            <h4>Legal</h4>
+            <a
+              target="_blank"
+              href="Documentos/POLITICA-DE-PRIVACIDAD-Maido.pdf"
+              >Política de Privacidad</a
+            >
+            <!-- Dentro de href llama a un documento pdf con la poltica-->
+            <a target="_blank" href="Documentos/Terminos-Condiciones-Maido.pdf"
+              >Términos y Condiciones</a
+            >
+            <!-- Dentro de href llama a un documento pdf con los terminos y condiciones-->
+            <a target="_blank" href="Documentos/Derechos-ARCO-Maido.pdf"
+              >Protección de Datos</a
+            >
+          </div>
+
+          <!-- Redes sociales con íconos personalizados -->
+          <div class="footer-social">
+            <h4>Síguenos</h4>
+            <a
+              target="_blank"
+              href="https://www.facebook.com/MaidoLima/"
+              target="_blank"
+              ><img
+                src="https://cdn-icons-png.flaticon.com/512/145/145802.png"
+                alt="Facebook"
+                class="social-icon"
+            /></a>
+            <a
+              target="_blank"
+              href="https://www.instagram.com/mitsuharu_maido"
+              target="_blank"
+              ><img
+                src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"
+                alt="Instagram"
+                class="social-icon"
+            /></a>
+          </div>
+        </div>
+      </footer>
+    </section>
+    <script src="main.js"></script>
+  </body>
+</html>
